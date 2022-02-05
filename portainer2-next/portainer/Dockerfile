@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.5
+ARG BUILD_FROM=hassioaddons/base:11.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -14,7 +14,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
     \
     && curl -L -s \
-        "https://github.com/portainer/portainer/releases/download/2.0.0/portainer-2.0.0-linux-${ARCH}.tar.gz" \
+        "https://github.com/portainer/portainer/releases/download/2.11.0/portainer-2.11.0-linux-${ARCH}.tar.gz" \
         | tar zxvf - -C /opt/
 
 # Copy root filesystem
@@ -27,7 +27,7 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Portainer 2.0" \
+    io.hass.name="Portainer 2.11" \
     io.hass.description="Manage your Docker environment with ease" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
@@ -35,10 +35,10 @@ LABEL \
 #    maintainer="Franck Nijhof <frenck@addons.community>" \
     org.opencontainers.image.title="Portainer" \
     org.opencontainers.image.description="Manage your Docker environment with ease" \
-    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
+    org.opencontainers.image.vendor="Fork of DISCONTINUED Home Assistant Community Add-ons" \
 #    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
+#    org.opencontainers.image.url="https://addons.community" \
     org.opencontainers.image.source="https://github.com/PascalKern/addon-portainer" \
     org.opencontainers.image.documentation="https://github.com/PascalKern/addon-portainer/blob/master/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
