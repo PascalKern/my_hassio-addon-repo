@@ -1,9 +1,7 @@
----
-name: Portainer v2.0
+name: Portainer v2.0.2
 version: 2.12.0
 slug: portainer2
 description: Manage your Docker environment with ease
-url: https://github.com/PascalKern/addon-portainer
 advanced: true
 ingress: true
 ingress_port: 1337
@@ -26,7 +24,7 @@ boot: auto
 hassio_api: true
 hassio_role: default
 docker_api: true
-options: {}
+options: { }
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   agent_secret: str?
