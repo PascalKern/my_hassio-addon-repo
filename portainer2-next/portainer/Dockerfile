@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG BUILD_ARCH=amd64
-ARG PORT_VERSION=2.11.0
+ARG PORT_VERSION=2.15.1
 ENV VERSION=${PORT_VERSION}
 RUN \
     if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
