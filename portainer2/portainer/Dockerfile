@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG BUILD_ARCH=aarch64
-ARG PORT_VERSION=2.16.0
+ARG PORT_VERSION=2.16.1
 ENV VERSION=${PORT_VERSION}
 RUN \
     if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \

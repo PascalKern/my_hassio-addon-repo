@@ -1,5 +1,5 @@
 name: Portainer v2
-version: 2.13.0
+version: 2.16.1
 slug: portainer2
 description: Manage your Docker environment with ease
 advanced: true
