@@ -1,5 +1,5 @@
-#ARG BUILD_FROM=ghcr.io/hassio-addons/base/aarch64:15.0.7
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/aarch64:10.0.1
+# https://github.com/orgs/home-assistant/packages?repo_name=docker-base
+ARG BUILD_FROM=ghcr.io/home-assistant/aarch64-base:3.20
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,8 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG BUILD_ARCH=aarch64
-#ARG PORT_VERSION=2.19.4
-ARG PORT_VERSION=2.16.1
+ARG PORT_VERSION=2.21.4
 ENV VERSION=${PORT_VERSION}
 RUN \
     if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \

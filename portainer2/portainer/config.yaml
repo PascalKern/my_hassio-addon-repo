@@ -1,6 +1,5 @@
 name: Portainer v2
-#version: 2.19.4
-version: 2.16.1a
+version: 2.21.4
 slug: portainer2
 description: Manage your Docker environment with ease
 advanced: true
@@ -11,8 +10,7 @@ ingress_port: 1337
 startup: services
 panel_icon: mdi:docker
 
-#homeassistant: 2024.2.3
-homeassistant: 2021.12.10
+homeassistant: 2024.10.4
 
 arch:
   - aarch64
@@ -27,7 +25,7 @@ ports:
   9443/tcp: 9443
 ports_description:
   8000/tcp: Edge Agent Api (Enable when managing remote edge agents)
-  9090/tcp: Frontend port (https)
+  9443/tcp: Frontend port (https)
 boot: auto
 hassio_api: true
 hassio_role: default
