@@ -35,6 +35,10 @@ if ! bashio::fs.file_exists "/data/hidden"; then
     options+=(--hide-label io.hass.type=multicast)
     # shellcheck disable=SC2191
     options+=(--hide-label io.hass.type=observer)
+    # shellcheck disable=SC2191
+    options+=(--hide-label io.portainer.type=agent) # Set by me (when remembering) on agent createion
+    # shellcheck disable=SC2191
+    options+=(--hide-label io.portainer.agent=true) # Most likely set by portainer (agent) itself?!
 
     touch /data/hidden
 fi
