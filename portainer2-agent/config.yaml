@@ -1,0 +1,31 @@
+# Mandatory Options
+name: Portainer v2 Agent
+version: 2.21.4
+slug: portainer2_agent
+description: The Portainer Agent to be run on the same host as the Portainer v2 Server is running as an AddOn (prevent HassIO from having incompatible software warning)
+# As listed in: https://hub.docker.com/r/portainer/agent/tags for the version tagged image (maybe need -alpine in version!?)
+arch:
+  - amd64
+  - armv7
+  - arm64
+
+image: portainer/agent   # Uses the version (of the addon) as the version for this image
+
+advanced: true
+homeassistant: 2024.10.4
+
+ports:
+  9001/tcp: 9001
+ports_description:
+  9001/tcp: Port for Portainer v2 Server to connect with agent
+
+# boot: auto  # Default
+# hassio_role: default  # Default
+docker_api: true
+startup: services  
+
+
+# legacy: true # Test without -> hass.io labels?
+
+
+# full_access: true  # Same as docker --privileged

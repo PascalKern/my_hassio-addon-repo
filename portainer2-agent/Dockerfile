@@ -1,0 +1,4 @@
+ARG AGENT_VERSION=2.21.4
+
+FROM portainer/agent:${AGENT_VERSION}
+
